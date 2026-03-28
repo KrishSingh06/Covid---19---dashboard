@@ -3,7 +3,6 @@ import pandas as pd
 import plotly.express as px
 import streamlit as st
 
-# -------------------- LOAD DATA --------------------
 @st.cache_data
 def load_data():
     df = pd.read_csv('country_wise_latest.csv')
@@ -24,7 +23,7 @@ countries = st.sidebar.multiselect(
     default=["India"] if "India" in df['Country/Region'].values else []
 )
 
-# -------------------- METRICS --------------------
+
 st.header("📊 Selected Country Stats")
 
 for country in countries:
